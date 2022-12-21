@@ -9,7 +9,7 @@ The configuration manager can be accessed in-game by pressing the hotkey (by def
 ## How to use
 
 -   Install a build of BepInEx 5 >= v5.4.20.
--   [Download the latest release from the Releases page](/toebeann/BepInEx.ConfigurationManager.Subnautica/releases/latest).
+-   [Download the latest release from the Releases page](https://github.com/toebeann/BepInEx.ConfigurationManager.Subnautica/releases/latest).
 -   Place the .dll inside your BepInEx\Plugins folder.
 -   Start the game and press F5.
 
