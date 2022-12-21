@@ -1,13 +1,13 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyProduct("BepInEx.ConfigurationManager")]
-[assembly: AssemblyTitle("BepInEx.ConfigurationManager")]
+[assembly: AssemblyProduct("Tobey.ConfigurationManager.Subnautica")]
+[assembly: AssemblyTitle("Tobey.ConfigurationManager.Subnautica")]
 
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("https://github.com/BepInEx/BepInEx.ConfigurationManager")]
-[assembly: AssemblyCopyright("Copyright © 2019")]
+[assembly: AssemblyCompany("https://github.com/toebeann/BepInEx.ConfigurationManager.Subnautica")]
+[assembly: AssemblyCopyright("Copyright © 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

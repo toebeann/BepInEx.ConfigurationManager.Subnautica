@@ -17,16 +17,19 @@ namespace ConfigurationManager
 {
     /// <summary>
     /// An easy way to let user configure how a plugin behaves without the need to make your own GUI. The user can change any of the settings you expose, even keyboard shortcuts.
-    /// https://github.com/ManlyMarco/BepInEx.ConfigurationManager
+    /// https://github.com/toebeann/BepInEx.ConfigurationManager.Subnautica
     /// </summary>
     [BepInPlugin(GUID, "Configuration Manager", Version)]
+    [BepInProcess("Subnautica")]
+    [BepInProcess("SubnauticaZero")]
     [Browsable(false)]
+    [DisallowMultipleComponent]
     public class ConfigurationManager : BaseUnityPlugin
     {
         /// <summary>
         /// GUID of this plugin
         /// </summary>
-        public const string GUID = "com.bepis.bepinex.configurationmanager";
+        public const string GUID = "Tobey.BepInEx.ConfigurationManager.Subnautica";
 
         /// <summary>
         /// Version constant
