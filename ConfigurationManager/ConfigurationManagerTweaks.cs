@@ -1,6 +1,8 @@
 ﻿using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Configuration;
+using HarmonyLib;
+using System.Linq;
 using UnityEngine;
 
 namespace ConfigurationManager;
@@ -24,7 +26,7 @@ public class ConfigurationManagerTweaks : BaseUnityPlugin
     /// <summary>
     /// Version constant
     /// </summary>
-    public const string Version = "1.0";
+    public const string Version = "1.1";
 
     private ConfigurationManager configurationManager;
     private ConfigurationManager ConfigurationManager =>
@@ -34,6 +36,8 @@ public class ConfigurationManagerTweaks : BaseUnityPlugin
 
     private void Awake()
     {
+        ConfigurationManager.RegisterCustomSettingDrawer(typeof(KeyCode), DrawKeyCode);
+
         showConfigManager = Config.Bind(
             section: nameof(ConfigurationManager),
             key: "Show Configuration Manager",
@@ -53,5 +57,42 @@ public class ConfigurationManagerTweaks : BaseUnityPlugin
     }
 
     private void OnDisable() => ConfigurationManager.OverrideHotkey = false;
+
+    private static void DrawKeyCode(SettingEntryBase setting)
+    {
+        var _currentKeyboardShortcutToSet = Traverse.Create<SettingFieldDrawer>().Field<SettingEntryBase>("_currentKeyboardShortcutToSet");
+
+        if (_currentKeyboardShortcutToSet.Value == setting)
+        {
+            GUILayout.Label("Press any key", GUILayout.ExpandWidth(true));
+            GUIUtility.keyboardControl = -1;
+
+            var input = UnityInput.Current;
+            var keysToCheck = input.SupportedKeyCodes.Except(new[] { KeyCode.Mouse0, KeyCode.None }).ToArray();
+            foreach (var key in keysToCheck)
+            {
+                if (input.GetKeyDown(key))
+                {
+                    setting.Set(key);
+                    _currentKeyboardShortcutToSet.Value = null;
+                    break;
+                }
+            }
+
+            if (GUILayout.Button("Cancel", GUILayout.ExpandWidth(false)))
+                _currentKeyboardShortcutToSet.Value = null;
+        }
+        else
+        {
+            if (GUILayout.Button(setting.Get().ToString(), GUILayout.ExpandWidth(true)))
+                _currentKeyboardShortcutToSet.Value = setting;
+
+            if (GUILayout.Button("Clear", GUILayout.ExpandWidth(false)))
+            {
+                setting.Set(KeyCode.None);
+                _currentKeyboardShortcutToSet.Value = null;
+            }
+        }
+    }
 }
 
