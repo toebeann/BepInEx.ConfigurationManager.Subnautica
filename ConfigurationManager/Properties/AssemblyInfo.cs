@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyProduct("Tobey.ConfigurationManager.Subnautica")]
-[assembly: AssemblyTitle("Tobey.ConfigurationManager.Subnautica")]
+[assembly: AssemblyProduct("Tobey.BepInEx.ConfigurationManager.Subnautica")]
+[assembly: AssemblyTitle("Tobey.BepInEx.ConfigurationManager.Subnautica")]
 
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]

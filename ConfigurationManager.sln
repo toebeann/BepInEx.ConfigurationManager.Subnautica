@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tobey.ConfigurationManager.Subnautica", "ConfigurationManager\Tobey.ConfigurationManager.Subnautica.csproj", "{22EDD399-1CC6-47C8-B8B8-A95FF2999901}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tobey.BepInEx.ConfigurationManager.Subnautica", "ConfigurationManager\Tobey.BepInEx.ConfigurationManager.Subnautica.csproj", "{22EDD399-1CC6-47C8-B8B8-A95FF2999901}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{F28F879D-0FA8-488C-A696-BDCCD27099B9}"
 	ProjectSection(SolutionItems) = preProject
