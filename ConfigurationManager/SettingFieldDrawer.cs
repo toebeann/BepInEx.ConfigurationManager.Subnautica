@@ -50,6 +50,8 @@ namespace ConfigurationManager
         {
             if (setting.CustomDrawer != null)
                 setting.CustomDrawer(setting is ConfigSettingEntry newSetting ? newSetting.Entry : null);
+            else if (SettingDrawHandlers.TryGetValue(setting.SettingType, out var drawMethod))
+                drawMethod(setting); // workaround to ensure that global drawers registered by plugins are prioritised above internal drawers
             else if (setting.ShowRangeAsPercent != null && setting.AcceptableValueRange.Key != null)
                 DrawRangeField(setting);
             else if (setting.AcceptableValues != null)
