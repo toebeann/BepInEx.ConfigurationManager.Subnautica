@@ -1,15 +1,15 @@
 ﻿// Made by MarC0 / ManlyMarco
 // Copyright 2018 GNU General Public License v3.0
 
-using BepInEx;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
-
 namespace ConfigurationManager
 {
+    using BepInEx;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Reflection;
+
     /// <summary>
     /// Class representing all data about a setting collected by ConfigurationManager.
     /// </summary>
@@ -144,7 +144,7 @@ namespace ConfigurationManager
                 switch (attrib)
                 {
                     case null: break;
-                        
+
                     case DisplayNameAttribute da:
                         DispName = da.DisplayName;
                         break;
@@ -163,7 +163,7 @@ namespace ConfigurationManager
                     case BrowsableAttribute bro:
                         Browsable = bro.Browsable;
                         break;
-                        
+
                     case Action<SettingEntryBase> newCustomDraw:
                         CustomDrawer = _ => newCustomDraw(this);
                         break;

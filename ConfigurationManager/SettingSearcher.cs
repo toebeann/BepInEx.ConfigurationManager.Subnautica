@@ -1,7 +1,6 @@
 ﻿using System;
 using BepInEx;
 using BepInEx.Configuration;
-using ConfigurationManager.Utilities;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,6 +8,8 @@ using System.Reflection;
 
 namespace ConfigurationManager
 {
+    using Utilities;
+    
     internal static class SettingSearcher
     {
         private static readonly ICollection<string> _updateMethodNames = new[]

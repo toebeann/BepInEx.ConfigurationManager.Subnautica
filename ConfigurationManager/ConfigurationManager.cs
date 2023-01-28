@@ -11,10 +11,11 @@ using BepInEx;
 using BepInEx.Logging;
 using UnityEngine;
 using BepInEx.Configuration;
-using ConfigurationManager.Utilities;
 
 namespace ConfigurationManager
 {
+    using Utilities;
+    
     /// <summary>
     /// An easy way to let user configure how a plugin behaves without the need to make your own GUI. The user can change any of the settings you expose, even keyboard shortcuts.
     /// https://github.com/toebeann/BepInEx.ConfigurationManager.Subnautica
