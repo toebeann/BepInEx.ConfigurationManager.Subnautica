@@ -28,7 +28,7 @@ In most cases you don't have to reference ConfigurationManager.dll or do anythin
 Specify `AcceptableValueRange` when creating your setting. If the range is 0f - 1f or 0 - 100 the slider will be shown as % (this can be overridden below).
 
 ```c#
-CaptureWidth = Config.AddSetting("Section", "Key", 1, new ConfigDescription("Description", new AcceptableValueRange<int>(0, 100)));
+CaptureWidth = Config.Bind("Section", "Key", 1, new ConfigDescription("Description", new AcceptableValueRange<int>(0, 100)));
 ```
 
 ### How to make my setting into a drop-down list?
@@ -58,7 +58,7 @@ private ConfigEntry<KeyboardShortcut> ShowCounter { get; set; }
 
 public Constructor()
 {
-    ShowCounter = Config.AddSetting("Hotkeys", "Show FPS counter", new KeyboardShortcut(KeyCode.U, KeyCode.LeftShift));
+    ShowCounter = Config.Bind("Hotkeys", "Show FPS counter", new KeyboardShortcut(KeyCode.U, KeyCode.LeftShift));
 }
 
 private void Update()
@@ -83,10 +83,10 @@ Here's an example of overriding order of settings and marking one of the setting
 
 ```c#
 // Override IsAdvanced and Order
-Config.AddSetting("X", "1", 1, new ConfigDescription("", null, new ConfigurationManagerAttributes { IsAdvanced = true, Order = 3 }));
+Config.Bind("X", "1", 1, new ConfigDescription("", null, new ConfigurationManagerAttributes { IsAdvanced = true, Order = 3 }));
 // Override only Order, IsAdvanced stays as the default value assigned by ConfigManager
-Config.AddSetting("X", "2", 2, new ConfigDescription("", null, new ConfigurationManagerAttributes { Order = 1 }));
-Config.AddSetting("X", "3", 3, new ConfigDescription("", null, new ConfigurationManagerAttributes { Order = 2 }));
+Config.Bind("X", "2", 2, new ConfigDescription("", null, new ConfigurationManagerAttributes { Order = 1 }));
+Config.Bind("X", "3", 3, new ConfigDescription("", null, new ConfigurationManagerAttributes { Order = 2 }));
 ```
 
 ### How to make a custom editor for my setting?
@@ -99,7 +99,7 @@ To use a custom seting drawer for an individual setting, use the `CustomDrawer` 
 void Start()
 {
     // Add the drawer as a tag to this setting.
-    Config.AddSetting("Section", "Key", "Some value"
+    Config.Bind("Section", "Key", "Some value"
         new ConfigDescription("Desc", null, new ConfigurationManagerAttributes{ CustomDrawer = MyDrawer });
 }
 
