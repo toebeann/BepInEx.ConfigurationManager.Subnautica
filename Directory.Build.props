@@ -4,13 +4,13 @@
 		<Version>18.4.1</Version>
 
 		<!-- Sets the 'Product name' field on the dll file -->
-		<Product>BepInEx.ConfigurationManager</Product>
+		<Product>Tobey.BepInEx.ConfigurationManager.Subnautica</Product>
 		<!-- Sets the 'File description' field on the dll file -->
-		<AssemblyTitle>Universal in-game configuration manager for BepInEx plugins</AssemblyTitle>
+		<AssemblyTitle>Universal in-game configuration manager for BepInEx plugins, tweaked for Subnautica</AssemblyTitle>
 		<!-- Sets the 'Company' field on the dll file -->
-		<Authors>https://github.com/BepInEx/BepInEx.ConfigurationManager</Authors>
+		<Authors>https://github.com/toebeann/BepInEx.ConfigurationManager.Subnautica</Authors>
 		<!-- Sets the 'Copyright' field on the dll file -->
-		<Copyright>Copyright © 2019 / LGPL-3.0</Copyright>
+		<Copyright>Copyright © 2022 / LGPL-3.0</Copyright>
 
 		<Deterministic>true</Deterministic>
 		<DebugSymbols>true</DebugSymbols>

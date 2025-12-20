@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>Tobey.ConfigurationManagerTweaks.Subnautica</AssemblyName>
+    <Product>Configuration Manager Tweaks</Product>
+    <Version>2.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>ConfigurationManager</RootNamespace>
+    <BepInExPluginGuid>Tobey.BepInEx.ConfigurationManagerTweaks.Subnautica</BepInExPluginGuid>
+    <Authors>https://github.com/toebeann/BepInEx.ConfigurationManager.Subnautica</Authors>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DebugType>none</DebugType>
+    <Configurations>Release</Configurations>
+  </PropertyGroup>
+
+  <Target Name="ZipClean" AfterTargets="AfterClean">
+    
+  </Target>
+
+  <Target Name="ZipBuild" AfterTargets="AfterBuild">
+    <ItemGroup>
+      <BuildFiles Include="$(OutputPath)\*"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(BuildFiles)" DestinationFolder="$(OutputPath)\zip\BepInEx\plugins\ConfigurationManager" />
+    <MakeDir Directories="..\bin" Condition="!Exists('..\bin')" />
+    <ZipDirectory SourceDirectory="$(OutputPath)\zip\" DestinationFile="..\bin\ConfigurationManager.zip" Overwrite="true" />
+  </Target>
+  
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+    <PackageReference Include="UnityEngine.Modules" Version="2019.4.36" IncludeAssets="compile" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\ConfigurationManager\ConfigurationManager.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Subnautica\Subnautica_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Subnautica\Subnautica_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

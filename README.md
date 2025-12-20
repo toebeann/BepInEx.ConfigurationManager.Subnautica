@@ -1,7 +1,7 @@
-## Plugin / mod configuration manager for BepInEx
+## Plugin / mod configuration manager for BepInEx 5, tweaked for use in Subnautica
 An easy way to let user configure how a plugin behaves without the need to make your own GUI. The user can change any of the settings you expose, even keyboard shortcuts.
 
-The configuration manager can be accessed in-game by pressing the hotkey (by default F1). Hover over the setting names to see their descriptions, if any.
+The configuration manager can be accessed in-game by pressing the hotkey (by default F5). Hover over the setting names to see their descriptions, if any.
 
 ![Configuration manager](Screenshot.PNG)
 
@@ -9,9 +9,9 @@ The configuration manager can be accessed in-game by pressing the hotkey (by def
 There are two versions of this plugin, for BepInEx 5 (version 5.4.20 or newer, mono only) and BepInEx 6 (nightly build 664 or newer, IL2CPP only).
 
 - Install and configure the correct BepInEx version for your game (see above).
-- Download latest release for your BepInEx from the [Releases](https://github.com/BepInEx/BepInEx.ConfigurationManager/releases).
+- Download latest release for your BepInEx from the [Releases](https://github.com/toebeann/BepInEx.ConfigurationManager.Subnautica/releases/latest).
 - Extract the plugin directly into your game directory, where the BepInEx folder is (the .dll should end up inside your BepInEx\Plugins folder).
-- Start the game and press F1.
+- Start the game and press F5.
 
 Note: The .xml file include in the release zip is useful for plugin developers when referencing ConfigurationManager.dll in your plugin, it will provide descriptions for types and methods to your IDE. Users can ignore it.
 
