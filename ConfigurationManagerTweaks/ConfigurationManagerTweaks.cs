@@ -18,8 +18,6 @@ namespace ConfigurationManager;
 [BepInProcess("SubnauticaZero")]
 public sealed class ConfigurationManagerTweaks : BaseUnityPlugin
 {
-    //private const string freezeTimeIdName = "IngameMenu";
-
     private ConfigEntry<KeyboardShortcut> showConfigManager;
     private ConfigEntry<bool> pauseWhileOpen;
 
