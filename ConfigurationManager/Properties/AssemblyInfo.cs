@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("https://github.com/toebeann/BepInEx.ConfigurationManager.Subnautica")]
+[assembly: AssemblyCompany("https://github.com/toebeann/BepInEx.ConfigurationManager.Subnautica/tree/subnautica-tweaks")]
 [assembly: AssemblyCopyright("Copyright © 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
